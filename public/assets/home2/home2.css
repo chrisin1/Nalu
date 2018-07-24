@@ -1,0 +1,33 @@
+body {
+  background-image: url("http://www.surfing-waves.com/data/datastorage/images/c/e/1/ce1b10f53b1a4133aaae9c5a53a82950.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.homeheading {
+  text-align: center;
+  font-family: 'Walter Turncoat', cursive;
+  font-weight: 400%;
+}
+
+.homebutton {
+  text-align: right;
+}
+
+.thumbnail {
+  image:
+}
+
+img {
+   opacity: 0.5;
+   filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+img:hover {
+   opacity: 1.0;
+   filter: alpha(opacity=100); /* For IE8 and earlier */
+}
