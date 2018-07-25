@@ -22,24 +22,88 @@ module.exports = function(app, db, passport){
   });
 
 
-  app.get('/post/:id', function(req,res){
+  app.get('/post/:id', isLoggedIn, function(req,res){
+    console.log('Get request successful here');
+    //let sql='SELECT * FROM todoItems';
+    // console.log(req.user);
+    // console.log(req.params.id);
+    let sql ='SELECT * FROM surfspot WHERE id = ' + req.params.id + ';';
+    let sql2 = 'SELECT * FROM reviews where surfspotID = ' + req.params.id + ';';
+
+    db.query(sql, (err, result) => {
+
+      if (err) throw err;
+      db.query(sql2, (err, results) => {
+        if (err) throw err;
+
+          res.render('posts2', {surf: result, review: results, user: req.user} );
+
+
+      })
+
+
+    })
+  });
+
+  app.get('/postunlogged/:id', function(req,res){
     console.log('Get request successful');
     //let sql='SELECT * FROM todoItems';
     console.log(req.params.id);
     let sql ='SELECT * FROM surfspot WHERE id = ' + req.params.id + ';';
     let sql2 = 'SELECT * FROM reviews where surfspotID = ' + req.params.id + ';';
-    var reviews ;
     db.query(sql, (err, result) => {
+
       if (err) throw err;
       db.query(sql2, (err, results) => {
         if (err) throw err;
-        if (results.length != 0)
-          reviews = results;
+
+        res.render('posts', {surf: result, review: results, user: req.user} );
       })
-      res.render('posts', {surf: result, review: reviews} );
+
+
     })
   });
 
+
+
+  //posting info
+  app.post('/post/:id', isLoggedIn, function(req,res){
+    console.log('post request successful');
+
+    var dateCreated = new Date() ;
+    var dd = dateCreated.getDate();
+    var mm = dateCreated.getMonth()+1; //January is 0!
+    var yyyy = dateCreated.getFullYear();
+    var today = mm + '/' + dd + '/' + yyyy;
+
+    console.log(req.body);
+
+    let item = req.body;
+    item['userID'] = req.user.id;
+    item['surfspotID'] = req.params.id;
+    item['createdAt'] = today;
+    item['author']= req.user.username;
+    console.log(item);
+    let sql = 'INSERT INTO reviews SET ?';
+    let query = db.query(sql, item, (err, results) => {
+      if (err) throw err;
+      // console.log(result);
+      let sql1 ='SELECT * FROM surfspot WHERE id = ' + req.params.id + ';';
+      let sql2 = 'SELECT * FROM reviews where surfspotID = ' + req.params.id + ';';
+
+      db.query(sql1, (err, result) => {
+        if (err) throw err;
+        db.query(sql2, (err, results) => {
+          if (err) throw err;
+          if (results.length != 0)
+            reviews = results;
+              res.render('posts2', {surf: result, review: reviews, user: req.user} );
+        })
+
+      })
+    });
+
+  });
 
   //displaying sign in
   app.get('/signin', function(req,res){

@@ -1,7 +1,10 @@
 body {
-  background-image: url("http://www.surfing-waves.com/data/datastorage/images/c/e/1/ce1b10f53b1a4133aaae9c5a53a82950.jpg");
+  background-image: url(../bg.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-position: bottom;
+  background-position: right;
+  /* margin: 5%; */
 }
 
 p {
@@ -12,22 +15,126 @@ p {
   text-align: center;
   font-family: 'Walter Turncoat', cursive;
   font-weight: 400%;
+  padding-top: 18vh;
 }
 
 .homebutton {
-  text-align: right;
+  /* text-align: right; */
+  float: right;
+
+
+
 }
 
-.thumbnail {
-  image:
+
+
+button {
+  display: block;
+  width: 240px;
+  height: 40px;
+  padding: 0;
+  /* margin: 10px 20px 10px; */
+  font-weight: 700;
+  color: #fff;
+  background-color: #6386a3;
+  border: none;
+  border-radius: 20px;
+  transition: background-color .10s ease-in-out;
 }
+
+button:hover {
+  background-color: #33414c;
+}
+
+button:active {
+  background-color: #8cb6d8;
+}
+
+
+/* asl;dkfnsad;lkfnsakljnfaksdnvfksdjangkadjsnvggasdlkngfvs;akdjvnfjlaksnfk */
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway|Reenie+Beanie);
+
+* {
+  box-sizing: border-box;
+}
+
+
 
 img {
-   opacity: 0.5;
-   filter: alpha(opacity=50); /* For IE8 and earlier */
+  width: 100%;
 }
 
-img:hover {
-   opacity: 1.0;
-   filter: alpha(opacity=100); /* For IE8 and earlier */
+a {
+  color: black;
+}
+
+.caption, h2, .date {
+  margin: 0;
+  text-align: center;
+}
+
+.caption,
+h2 {
+  font-size: 2em;
+  padding: 10px 10px 0 10px;
+}
+
+.date {
+  font-size: 1.1em;
+}
+
+.description {
+  font-size: 0.9em;
+  padding: 0 20px 20px 20px;
+  text-align: left;
+}
+
+.container {
+  perspective: 1000px;
+  display: inline-block;
+  margin: 3%;
+  background-color: rgba(229,229,229,.8);
+}
+
+.container:hover .flipper {
+  transform: rotateY(180deg);
+
+}
+
+.container,
+.front,
+.back {
+  width: 250px;
+  height: 250px;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+#content {
+  text-align: center;
 }

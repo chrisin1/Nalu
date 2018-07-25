@@ -15,7 +15,9 @@ html, body {
   color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
+ul{
+  list-style-type: none;
+}
 .background {
   z-index: -1;
   position: fixed;
@@ -30,10 +32,6 @@ header {
   position: fixed;
   top: 0;
   width: 100%
-}
-
-ul {
-  list-style-type: none;
 }
 
 

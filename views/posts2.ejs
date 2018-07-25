@@ -20,7 +20,7 @@
 <body>
 
   <header>
-    <h1><a href="/">Go home</a></h1>
+    <h1><a href="/home2">Go home</a></h1>
   </header>
 
 
@@ -34,10 +34,32 @@
 
   <canvas id="canvas"></canvas>
 
+
   <article class="poster">
-  <div class="yourtake">
-    <a href="/signin">GIVE YOUR TAKE ON THE WAVES BY LOGGING IN</a><i class="showsubmit fas fa-edit"></i>
-  </div>
+    <form method = "post" action = "/post/<%=surf[0].id%>">
+    <div class="yourtake">
+      GIVE YOUR TAKE ON THE WAVES <i class="showsubmit fas fa-edit"></i>
+    </div>
+    <div class="makepost">
+        <textarea name="review" rows="4" cols="125" placeholder="tell us what you think!"></textarea>
+      <br>
+      <div class="ratings">
+          WAVES: <input type="number" name="waves" value="number" step="1" required>/10 <br>
+            choppiness: <input type="number" name="choppiness" value="number" step="1" required>/10 <br>
+            height: <input type="number" name="height" value="number" step=".1" required>feet <br>
+          <br>
+          CONDITIONS <input type="number" name="conditions" value="number" step="1" required>/10<br>
+            weather <input type="number" name="weather" value="number" step="1" required>/10<br>
+            water temperature <input type="number" name="watertemperature" value="number" step="1" required> degrees<br>
+            <input type="number" name="othersurfers" value="number" step="1" required> other surfers<br>
+          </div>
+          <div class="call-to-action">
+            <button id="submitButton" type="submit">SUBMIT</button>
+          </div>
+    </div>
+  </form>
+	</article>
+
 
   </article>
 
@@ -65,6 +87,10 @@
         <div>
         <p>comments <i class="showcomments fas fa-caret-square-down"></i><i class="hidecomments fas fa-caret-square-up"></i><br></p>
       </div>
+
+      <div id = "make comment">
+        <textarea name="review" rows="4" cols="125" placeholder="how do you feel about this review?"></textarea>
+      </div>
       <div class="comments">
         <p>posted by [username] at [time stamp]</p>
         <div class="commentcontent">
@@ -78,5 +104,22 @@
   <% } %>
 </ul>
 
-<body>
-  <script src = "/assets/posts/posts.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script  src="/assets/posts2/posts2.js"></script>
+
+</body>
+</html>

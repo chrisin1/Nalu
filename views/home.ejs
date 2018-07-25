@@ -2,26 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Nalu | home</title>
-    <link rel="stylesheet" href="/assets/home/home.css" type ="text/css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Nalu | hometest</title>
+    <link rel="stylesheet" href="/assets/home/home.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="homebutton">
-      <button type="button" id = "signin" class="btn btn-default"><a href = "/signin">Sign in</a></button><br>
-      <button type="button" id = "signup" class="btn btn-default"><a href = "/signup">Sign up</a></button>
+      <button id="login-button" type="button"> <a href = "/signin">Sign In</a></button><br>
+      <button id="login-button" type="button"> <a href = "/signup">Sign Up</a></button><br><br><br><br>
     </div>
     <div class="homeheading">
-        <div id = "greeting">
-          <h1> Welcome </h1>
-        </div>
         <h1>Nalu</h1>
         <h3><i>Your</i> live surfing feed. <br>
           No confusing numbers.  No complicated charts.<br>
@@ -30,40 +22,70 @@
         <br>
         <!-- <img src="https://i.ytimg.com/vi/WccmL7RJ06U/maxresdefault.jpg" alt="ftpierceinlet" class="img-thumbnail"> -->
 
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="https://i.ytimg.com/vi/WccmL7RJ06U/maxresdefault.jpg" alt="ftpierceinlet">
-              <div class="caption">
-                <h3>Fort Pierce Inlet</h3>
-                <p>This is info about this spot.  Two sentences max.</p>
-                <p><a id = "ftpierce" class="btn btn-primary" role="button">See reports</a></p>
-              </div>
-            </div>
+
+      <div id="content">
+      <div class="container">
+        <div class="flipper">
+          <div class="front">
+            <img src="https://i.ytimg.com/vi/WccmL7RJ06U/maxresdefault.jpg" alt="ftpierceinlet">
+            <h1 class="caption">Fort Pierce Inlet</h1>
           </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="http://verovine.com/vimages/994436855image.jpg" alt="vero pier">
-              <div class="caption">
-                <h3>Vero Pier</h3>
-                <p>slkdflsknf;alsknfl;asknfsld;aknfvasl;dkjfaldk</p>
-                <p><a id = "vero" class="btn btn-primary" role="button">See reports</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="http://www.surfline.com/surfnews/images/2007/07_july/si_spotcheck/full/45_Sebastian_ESM.jpg" alt="sebinlet">
-              <div class="caption">
-                <h3>Sebastian Inlet</h3>
-                <p>slkdflsknf;alsknfl;asknfsld;aknfvasl;dkjfaldk</p>
-                <p><a id = "sebastian" class="btn btn-primary" role="button">See reports</a></p>
-              </div>
-            </div>
+          <div class="back">
+            <a href="/postunlogged/5">
+              <h2>Fort Pierce Inlet</h2>
+            </a>
+            <p class="date">Ft. Pierce, FL</p>
+            <p class="description">Fort Pierce Inlet, also called North Jetty, is located in Ft. Pierce Inlet St. Park so there is an entry fee and the beach is usually crowded with beachgoers.</p>
           </div>
         </div>
-    </div>
-  </body>
-  <script src = "/assets/home/home.js" type = "text/javascript"></script>
+      </div>
 
+      <div class="container">
+        <div class="flipper">
+          <div class="front">
+            <img src="http://verovine.com/vimages/994436855image.jpg" alt="vero pier">
+            <h1 class="caption">Vero Pier</h1>
+          </div>
+          <div class="back">
+            <a href="/postunlogged/4">
+              <h1>Vero Pier</h1>
+            </a>
+            <p class="date">Vero Beach, FL</p>
+            <p class="description">Located in Zero Beach Florida, the only time you'll really ever get waves here is when there is an offshore storm or hurricane.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="flipper">
+          <div class="front">
+            <img src="http://www.surfline.com/surfnews/images/2007/07_july/si_spotcheck/full/45_Sebastian_ESM.jpg" alt="sebinlet">
+            <h1 class="caption">Seb. Inlet</h1>
+          </div>
+          <div class="back">
+            <a href="/postunlogged/1">
+              <h1>Sebastian Inlet</h1>
+            </a>
+            <p class="date">Sebastian, FL</p>
+            <p class="description">This is one of the spots World Champion Kelly Slater grew up riding.  So the moral of the story is this: if you surf here, you'll become Kelly Slater. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+              <!-- <img src="https://i.ytimg.com/vi/WccmL7RJ06U/maxresdefault.jpg" alt="ftpierceinlet">
+              <img src="http://verovine.com/vimages/994436855image.jpg" alt="vero pier">
+              <img src="http://www.surfline.com/surfnews/images/2007/07_july/si_spotcheck/full/45_Sebastian_ESM.jpg" alt="sebinlet"> -->
+
+
+    </div>
+    <script src = '/assets/home/home.js'></script>
+  </body>
 </html>
